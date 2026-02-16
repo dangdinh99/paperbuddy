@@ -34,7 +34,13 @@ def send_message(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            message_text = data.get('message', '')
+            message_text = data.get('message', '').strip()
+
+            if not message_text:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Message cannot be empty',
+                }, status=400)
 
             # Create message entry
             entry = {

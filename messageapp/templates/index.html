@@ -59,7 +59,12 @@
 
     <script>
         function sendMessage() {
-            const message = document.getElementById('messageInput').value;
+            const message = document.getElementById('messageInput').value.trim();
+
+            if (!message) {
+                alert('Please enter a message before sending.');
+                return;
+            }
 
             fetch('/api/send/', {
                 method: 'POST',
