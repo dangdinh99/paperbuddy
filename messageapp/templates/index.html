@@ -76,8 +76,7 @@
                 const responseDiv = document.getElementById('response');
                 responseDiv.style.display = 'block';
                 responseDiv.innerHTML = '<strong>Response:</strong><br>' +
-                                       'Status: ' + data.status + '<br>' +
-                                       'Received: ' + data.received;
+                                       'Status: ' + data.status + '<br>';
                 document.getElementById('messageInput').value = '';
                 loadMessages();
             });

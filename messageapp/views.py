@@ -56,7 +56,6 @@ def send_message(request):
             return JsonResponse({
                 'status': 'success',
                 'message': 'Message received and saved!',
-                'received': message_text,
             })
 
         except Exception as e:
